@@ -1,0 +1,106 @@
+/* * {
+  margin: 0px;
+  box-sizing: border-box;
+} */
+
+/* .editor-wrapper {
+  width: 768px;
+  border: 1px solid black;
+  background: #fff;
+  padding: 1rem;
+} */
+/* 
+.editor-container {
+  width: 100%;
+  border: 1px solid green;
+  padding: 1rem;
+} */
+
+.toolbar-grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 1fr 1fr;
+}
+
+.editor-btn {
+  margin-right: 8px;
+  font-size: 1rem;
+  padding: 10px;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+}
+
+.superFancyBlockquote {
+  color: #999;
+  background: #fff;
+  font-family: "Hoefler Text", Georgia, serif;
+  font-style: italic;
+  border-left: 2px solid #999;
+  padding-left: 10px;
+}
+
+.codeBlock {
+  font-family: fira-code, monospace;
+  font-size: inherit;
+  background: #ffeff0;
+  font-style: italic;
+  word-wrap: normal;
+  word-wrap: break-word;
+  box-decoration-break: slice;
+  padding: 0.3rem 2rem;
+  border-radius: 0.2rem;
+}
+
+.leftAlign {
+  text-align: left;
+}
+.rightAlign {
+  text-align: right;
+}
+.centerAlign {
+  text-align: center;
+}
+.justifyAlign {
+  text-align: justify;
+}
+
+.header-one {
+  font-size: 2.5rem;
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: 900;
+  text-transform: capitalize;
+}
+.header-two {
+  font-size: 2rem;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.85);
+}
+.header-three {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.8);
+}
+.header-four {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.75);
+}
+.header-five {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
+}
+.header-six {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.65);
+  padding: 2px;
+}
+
+.unordered-list-item {
+  list-style: disc;
+}
+.ordered-list-item {
+  list-style: decimal;
+}
