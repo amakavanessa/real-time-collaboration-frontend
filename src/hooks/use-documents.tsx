@@ -27,6 +27,7 @@ const useDocuments = () => {
   useEffect(() => {
     if (accessToken === null) return;
     loadDocuments(accessToken);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [accessToken]);
 
   return {

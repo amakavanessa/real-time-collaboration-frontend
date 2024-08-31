@@ -22,6 +22,7 @@ const Document = () => {
 
   useEffect(() => {
     if (document !== null) setDocument(document);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [document]);
 
   return (

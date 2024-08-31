@@ -88,6 +88,7 @@ export const DocumentProvider = ({ children }: DocumentProviderInterface) => {
         error(err);
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [errors]);
 
   return (

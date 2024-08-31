@@ -1,7 +1,6 @@
 // import { useEffect } from "react";
 
 import { useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/use-auth";
 import Spinner from "../../atoms/spinner";
 
@@ -12,7 +11,6 @@ interface AuthRouteProps {
 const AuthRoute = ({ element }: AuthRouteProps) => {
   const { loadingAuth, isAuthenticated, refreshAccessToken } = useAuth();
   const isFirstRun = useRef(true);
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (isFirstRun.current) {
@@ -20,6 +18,7 @@ const AuthRoute = ({ element }: AuthRouteProps) => {
       console.log("hello from the AuthRoute Refresh");
       isFirstRun.current = false;
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // useEffect(() => {

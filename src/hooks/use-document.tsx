@@ -62,6 +62,7 @@ const useDocument = (documentId: number, token: string) => {
         error(err);
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [errors]);
 
   return {

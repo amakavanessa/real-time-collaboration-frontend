@@ -212,6 +212,7 @@ export const EditorProvider = ({ children }: EditorProviderInterface) => {
     } finally {
       setDocumentRendered(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [document]);
 
   // Connect Socket
@@ -250,6 +251,7 @@ export const EditorProvider = ({ children }: EditorProviderInterface) => {
     return () => {
       socket.current.off(SocketEvent.RECEIVE_CHANGES, handler);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [socket.current, document]);
 
   // Update Current Users
@@ -265,6 +267,7 @@ export const EditorProvider = ({ children }: EditorProviderInterface) => {
     return () => {
       socket.current.off(SocketEvent.CURRENT_USERS_UPDATE, handler);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [socket.current]);
 
   return (
