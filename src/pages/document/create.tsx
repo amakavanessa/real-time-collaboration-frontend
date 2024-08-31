@@ -9,7 +9,7 @@ import useWindowSize from "../../hooks/use-window-size";
 
 const Create = () => {
   const { heightStr } = useWindowSize();
-  const { userId, isAuthenticated, loadingAuth } = useAuth();
+  const { userId, isAuthenticated } = useAuth();
   const { documents, loading, setDocuments } = useDocuments();
 
   if (!isAuthenticated) {

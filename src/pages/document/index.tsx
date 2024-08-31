@@ -9,7 +9,7 @@ import { EditorContext } from "../../contexts/editor-context";
 
 const Document = () => {
   const { heightStr, widthStr } = useWindowSize();
-  const { id: documentId, token: token } = useParams();
+  const { id: documentId, token } = useParams();
   const documentHeaderRef = useRef<null | HTMLDivElement>(null);
   const { loading, document } = useDocument(
     parseInt(documentId as string),

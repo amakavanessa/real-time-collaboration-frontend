@@ -1,4 +1,4 @@
-import { ChangeEvent, useContext } from "react";
+import { useContext } from "react";
 import useAuth from "../../../hooks/use-auth";
 import { DocumentContext } from "../../../contexts/document-context";
 import DocumentInterface from "../../../types/interfaces/document";
@@ -36,16 +36,10 @@ const CurrentUsers = () => {
 const DocumentMenuBar = () => {
   const { accessToken, userId } = useAuth();
 
-  const { widthStr, heightStr } = useWindowSize();
+  const { widthStr } = useWindowSize();
 
-  const {
-    document,
-    saving,
-    setDocumentTitle,
-    setDocument,
-    setSaving,
-    setErrors,
-  } = useContext(DocumentContext);
+  const { document, setDocumentTitle, setDocument, setSaving, setErrors } =
+    useContext(DocumentContext);
 
   const { editorState, setEditorState } = useContext(EditorContext);
 

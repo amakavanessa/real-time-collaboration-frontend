@@ -12,7 +12,6 @@ const useAuth = () => {
     isAuthenticated,
     setIsAuthenticated,
     loading,
-    setIsLoading,
     loadingAuth,
     setLoadingAuth,
     errors,
