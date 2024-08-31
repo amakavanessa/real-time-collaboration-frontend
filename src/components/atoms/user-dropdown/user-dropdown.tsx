@@ -14,7 +14,6 @@ const UserDropDown = () => {
   const navigate = useNavigate();
 
   const logoutUser = async () => {
-    console.log("from the logout route");
     await logout();
 
     success("Successfully logged out!");

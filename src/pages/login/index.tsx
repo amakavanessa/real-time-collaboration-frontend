@@ -38,6 +38,18 @@ const Login = () => {
     return isValid;
   };
 
+  const validateForgotPassword = () => {
+    setEmailErrors([]);
+    let isValid = true;
+
+    if (!validator.isEmail(email)) {
+      setEmailErrors(["A valid email is required!"]);
+      isValid = false;
+    }
+
+    return isValid;
+  };
+
   const loginUser = async () => {
     if (!validate()) return;
     setIsLoading(true);
@@ -49,12 +61,22 @@ const Login = () => {
 
       login(newAccessToken, newRefreshToken);
       success("Successfully logged in!");
-      console.log("<>Hello from login</>");
+
       navigate("/document/create");
     } catch (err) {
       error("Incorrect username or password");
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const forgotPassword = async () => {
+    try {
+      if (!validateForgotPassword()) return;
+      await AuthService.resetPassword({ email });
+      success("Email sent for password reset");
+    } catch (err) {
+      error("Please check the email provided");
     }
   };
 
@@ -111,6 +133,7 @@ const Login = () => {
           />
 
           <button
+            onClick={forgotPassword}
             tabIndex={-1}
             className="text-sm hover:underline font-semibold text-blue-500 text-left"
           >
@@ -127,7 +150,11 @@ const Login = () => {
                   : "hover:bg-blue-500 active:ring-1"
               }`}
           >
-            {loading ? "Loading..." : "Login"}
+            {loading ? (
+              <div className="w-4 h-4 border-4 border-t-transparent border-blue-500 rounded-full animate-spin"></div>
+            ) : (
+              "Login"
+            )}
           </button>
         </div>
       </div>

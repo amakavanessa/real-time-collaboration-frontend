@@ -15,7 +15,7 @@ const AuthRoute = ({ element }: AuthRouteProps) => {
   useEffect(() => {
     if (isFirstRun.current) {
       refreshAccessToken();
-      console.log("hello from the AuthRoute Refresh");
+
       isFirstRun.current = false;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

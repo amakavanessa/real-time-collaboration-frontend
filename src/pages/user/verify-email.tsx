@@ -3,11 +3,12 @@ import { Navigate, useParams } from "react-router-dom";
 import { ToastContext } from "../../contexts/toast-context";
 import AuthService from "../../services/auth-service";
 import axios from "axios";
+import Spinner from "../../components/atoms/spinner";
 
 const VerifyEmail = () => {
   const { token } = useParams();
   const { addToast, error } = useContext(ToastContext);
-  const [children, setChildren] = useState(<>Loading...</>);
+  const [children, setChildren] = useState(<Spinner size="lg" />);
 
   const verifyEmail = async () => {
     if (token === undefined) {
@@ -21,7 +22,7 @@ const VerifyEmail = () => {
 
       addToast({
         title: "Successfully verified your email address",
-        body: "You many now login",
+        body: "You may now login",
         color: "success",
       });
     } catch (err) {

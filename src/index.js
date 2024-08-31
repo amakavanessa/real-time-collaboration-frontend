@@ -10,8 +10,11 @@ import { AuthProvider } from "./contexts/auth-context";
 import AuthRoute from "./components/molecules/auth-route";
 import { DocumentProvider } from "./contexts/document-context";
 import Document from "../src/pages/document/index";
+import ResetPasswoed from "../src/pages/password-reset/index";
 import Create from "./pages/document/create";
 import { EditorProvider } from "./contexts/editor-context";
+import NotFound from "./pages/not-found/index";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -41,6 +44,13 @@ root.render(
                 />
               }
             />
+            <Route
+              path="/user/reset-password/:token"
+              element={<ResetPasswoed />}
+            />
+
+            {/* Catch-all route for undefined paths */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </ToastProvider>
       </AuthProvider>

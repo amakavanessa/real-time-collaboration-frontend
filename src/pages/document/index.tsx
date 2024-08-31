@@ -6,6 +6,7 @@ import DocumentHeader from "../../components/organisms/document-header";
 import { DocumentContext } from "../../contexts/document-context";
 import DocumentEditor from "../../components/organisms/document-editor";
 import { EditorContext } from "../../contexts/editor-context";
+import Spinner from "../../components/atoms/spinner";
 
 const Document = () => {
   const { heightStr, widthStr } = useWindowSize();
@@ -31,7 +32,7 @@ const Document = () => {
       className="w-full h-full bg-gray flex flex-col"
     >
       {loading ? (
-        <>loading...</>
+        <Spinner size="lg" />
       ) : (
         <>
           <DocumentHeader documentHeaderRef={documentHeaderRef} />

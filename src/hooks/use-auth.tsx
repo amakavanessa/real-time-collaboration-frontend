@@ -81,7 +81,6 @@ const useAuth = () => {
       destroyAuth();
     } finally {
       setLoadingAuth(false);
-      console.log("hello from finally refreshAccestoken");
     }
   };
 
